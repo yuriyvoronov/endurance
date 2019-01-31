@@ -1,0 +1,43 @@
+$blue: #4778ce;
+$bluehover: #6591de;
+
+body
+{
+	overflow: hidden;
+	h1, h2, h3, h4, h5 
+	{
+		font-family: 'OpenSans-Bold';
+		color: #383838;
+	}
+	p
+	{
+		
+	}
+}
+@mixin button($color, $hover)
+{
+	color: #fff;
+		background: $blue;
+		text-decoration: none;
+		min-height: 54px;
+		text-align: center;
+		padding: 5px;
+		width: 230px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-transform: uppercase;
+		border-radius: 5px;
+		font-size: 'OpenSans-SemiBold';
+		-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.47);
+		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.47);
+		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.47);
+		transition: all .3s ease-in-out;
+		margin: 3px;
+		&:hover
+		{
+			background: $bluehover;
+			transition: all .3s ease-in-out;
+			transform: scale(1.005);
+		}
+}

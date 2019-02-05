@@ -1,0 +1,161 @@
+@import "basic";
+.login
+{background: #fff url('../img/bg.png') no-repeat;
+	background-position: center;
+	background-origin: content-box;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&-content 
+	{
+		width: 530px;
+		max-width: 90%;
+	}
+	&-logo
+	{
+		max-width: 530px;	
+		img
+		{
+			max-width: 100%;
+		}
+	}
+	&-form
+	{
+		background: #fff;
+		min-height: 40px;
+		width: 100%;
+		padding: 40px;
+		-webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+		box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+		&__h1
+		{
+			margin: 0;
+			text-align: center;
+			font-family: "OpenSans-Bold";
+			color: #151515;
+		}
+		&-item 
+		{
+			width: 100%;
+			position: relative;
+			label
+				{
+					top: 15px;
+					left: 15px;
+					font-size: 12px;
+					font-weight: 600;
+					font-family: "OpenSans-SemiBold";
+					position: absolute;
+					z-index: 3;
+					font-size: 20px;
+					color: #959595;
+					transition: all .2s ease;
+					
+				}
+			&__input
+				{
+					border: none;
+					border-bottom: 3px solid grey;
+					width: 90%;
+					padding: 7px;
+					font-size: 20px;
+					font-family: "OpenSans-SemiBold";
+					position: relative;
+					
+					&:focus
+					{
+						border: none;
+						color: $blue;
+						border-bottom: 3px solid grey;
+					}
+				}
+				&:after 
+					{
+						content:'';
+						width: 90%;
+						display: block;
+						height: 10px;
+						position: absolute;
+						bottom: 10px;
+						left: 2%;
+						right: 2%;
+						margin-left: 0;
+						margin-right: 0;
+						border-bottom: 3px solid $blue;
+						transform-origin: center center;
+						transform: scaleX(0);
+						z-index: 3;
+						transition: all .2s ease;
+					}
+			&.active
+			{
+				label
+					{
+						top: 0px;
+						font-size: 12px;
+						transition: all .3s ease;
+						color: $blue;
+					}
+				.login-form-item__input
+				{
+					&:focus
+					{
+						border: none;
+						
+					}
+				}
+				&:after
+				{
+					transform: scaleX(1);
+					transition: all .3s ease;
+				}
+			}
+		}
+		form 
+		{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			input 
+			{
+				margin: 10px;
+				position: relative;
+				
+				
+				&[type="submit"]
+				{
+					@include button($blue, $bluehover);
+					display: block;
+					border-width: 0px;
+					border-style: none;
+					border-color: none;
+					border-image: none;
+				}
+			}
+		}
+		p 
+		{
+			text-align: center;
+			font-family: "OpenSans-Regular";
+			font-size: 14px;
+			color: #959595;
+			a 
+			{
+				@include link($blue, $bluehover);
+			}
+		}
+	}
+}

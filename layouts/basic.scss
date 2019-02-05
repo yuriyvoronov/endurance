@@ -17,7 +17,7 @@ body
 @mixin button($color, $hover)
 {
 	color: #fff;
-		background: $blue;
+		background: $color;
 		text-decoration: none;
 		min-height: 54px;
 		text-align: center;
@@ -36,8 +36,19 @@ body
 		margin: 3px;
 		&:hover
 		{
-			background: $bluehover;
+			background: $hover;
 			transition: all .3s ease-in-out;
 			transform: scale(1.005);
 		}
+}
+@mixin link($color, $hover)
+{
+	color: $color;
+	font-family: 'OpenSans-SemiBold';
+	text-decoration: none;
+	&:hover
+	{
+		border: 0;
+		color: $hover;
+	}
 }
